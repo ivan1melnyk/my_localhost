@@ -16,7 +16,6 @@ class HttpHandler(BaseHTTPRequestHandler):
         match pr_url.path:
             case '/':
                 self.send_html_file('public/index.html')
-
             case  '/contact':
                 self.send_html_file('public/message.html')
             case '/public/style.css':
@@ -49,7 +48,7 @@ class HttpHandler(BaseHTTPRequestHandler):
 
     def send_html_file(self, filename, status=200):
         ext = filename.split(".")[1]
-        print(filename)
+        print(filename, ext)
         self.send_response(status)
         self.send_header('Content-type', f'text/{ext}')
         self.end_headers()

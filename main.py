@@ -1,7 +1,5 @@
-from thread_maker import ServerThread,  ClientThread
+from thread_maker import serverthread, clientthread
 
 if __name__ == '__main__':
-    server = ServerThread()
-    client = ClientThread()
-    server.start()
-    client.start()
+    serverthread.start()
+    clientthread.start()
